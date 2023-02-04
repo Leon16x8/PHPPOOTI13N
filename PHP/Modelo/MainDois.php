@@ -11,6 +11,7 @@
     require_once("DAO/Inserir.php");
     require_once("DAO/Consultar.php");
     require_once("DAO/Atualizar.php");
+    require_once("DAO/Excluir.php");
 
     use PHP\Modelo\Conta\Cliente;
     use PHP\Modelo\Conta\Conta;
@@ -19,6 +20,7 @@
     use PHP\Modelo\DAO\Inserir;
     use PHP\Modelo\DAO\Consultar;
     use PHP\Modelo\DAO\Atualizar;
+    use PHP\Modelo\DAO\Excluir;
     use PHP\Modelo\Pessoa;
 
     /*
@@ -86,6 +88,10 @@ echo $consultar->consultarTudo($conexao, 'pessoa');
 echo "<br><br>|----------- Atualizar Dado -----------|<br><br>";
 $atualizar = new Atualizar();
 $atualizar->atualizar($conexao, 'nome', 'DJ Azeitona', '1', 'pessoa');
+
+echo "<br><br>|----------- Excluir Dado -----------|<br><br>";
+$deletar = new Excluir();
+$deletar->excluir($conexao, 'pessoa', 25);
 
 
 
